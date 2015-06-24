@@ -18,17 +18,25 @@ def _get_meaningful_words(text):
 	words = [w for w in words if not w in stopwords_set]
 	return( " ".join( words ))
 
-def _create_bag(text):
+def _create_features(texts):
 	vectorizer = CountVectorizer(analyzer = "word",   
 				 tokenizer = None,    
 				 preprocessor = None,
 				 stop_words = None,  
-				 max_features = 5000) 
-	train_data_features = vectorizer.fit_transform(text)
+				 max_features = 500) 
+	train_data_features = vectorizer.fit_transform(texts)
 	train_data_features = train_data_features.toarray()
 	return train_data_features
+
+
+def filter_text(text):
+	filtered = _slugify(text)
+	filtered = _get_meaningful_words(filtered)
+	return filtered
+
+
 class Bag(object):
-	def __init__(self,text):
-		slug = _slugify(text)
-		slug = _get_meaningful_words(slug)		
-		self.features = _create_bag(slug)
+	def __init__(self,texts):
+		filtered_texts = map(filter_text,texts)
+		self.features = _create_features(filtered_texts)
+		print self.features	
