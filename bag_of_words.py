@@ -4,6 +4,7 @@ from bs4 import BeautifulSoup
 from sklearn.feature_extraction.text import CountVectorizer
 
 
+
 def _slugify(text):
 	"Removes html tags,punctuation and puts everything in lowercase"
 	slug = BeautifulSoup(text).get_text()
@@ -23,10 +24,12 @@ def _create_features(texts):
 				 tokenizer = None,    
 				 preprocessor = None,
 				 stop_words = None,  
-				 max_features = 500) 
-	train_data_features = vectorizer.fit_transform(texts)
-	train_data_features = train_data_features.toarray()
-	return train_data_features
+				 max_features = 5000) 
+	features = vectorizer.fit_transform(texts)
+	features = features.toarray()
+	
+	#feature_names = vectorizer.get_feature_names()
+	return features #,feature_names
 
 
 def filter_text(text):
@@ -38,5 +41,14 @@ def filter_text(text):
 class Bag(object):
 	def __init__(self,texts):
 		filtered_texts = map(filter_text,texts)
-		self.features = _create_features(filtered_texts)
-		print self.features	
+		self.features = _create_features(filtered_texts) 
+		self.num_features = len(self.features[0])
+		self.size = len(self.features)
+	def __repr__(self):
+		return ",".join(self.feature_names)
+	def getFeatures(self):
+		return self.features	
+
+
+
+
