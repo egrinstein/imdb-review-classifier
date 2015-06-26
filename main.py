@@ -23,7 +23,7 @@ def generate_arff(bag,reviews,filename):
 		for i in range(bag.num_features):
 			if bag.features[j][i] != 0:
 				rev_data = rev_data + str(i) +" 1, "
-		rev_data+= "class "+reviews[j].classification+"}\n"
+		rev_data+= "class "+bag.num_features+"}\n"
 		reviews[j] = None
 		f.write(rev_data)
 	f.close()
