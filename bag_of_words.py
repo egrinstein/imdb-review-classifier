@@ -24,8 +24,10 @@ def _create_features(texts):
 				 tokenizer = None,    
 				 preprocessor = None,
 				 stop_words = None,  
-				 max_features = 5000) 
+				 max_features = 50) 
 	features = vectorizer.fit_transform(texts)
+	try:
+		print vectorizer.get_feature_names()
 	features = features.toarray()
 	
 	#feature_names = vectorizer.get_feature_names()
