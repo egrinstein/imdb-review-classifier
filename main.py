@@ -52,8 +52,8 @@ if __name__== "__main__":
 			working_folder = working_folder + '/'
 			#windows=\
 
-	neg_reviews_path = song_files = glob.glob(working_folder+"part1/neg/*.txt")
-	pos_reviews_path = song_files = glob.glob(working_folder+"part1/pos/*.txt")
+	neg_reviews_path = glob.glob(working_folder+"part2/neg/*.txt")
+	pos_reviews_path = glob.glob(working_folder+"part2/pos/*.txt")
 	reviews = []	
 	num_neg_reviews = len(neg_reviews_path)
 	for i in range(num_neg_reviews):
@@ -70,7 +70,7 @@ if __name__== "__main__":
 	for review in reviews:
 		bag_of_reviews.append(review.filtered)
 		del review
-	print "creating bag of words...\n"
+	print "creating bag of words..."
 	bag_of_reviews = Bag(bag_of_reviews) 
 	print "...bag of words created\n"
 	generate_arff(bag_of_reviews,reviews,"imdb.arff")	
