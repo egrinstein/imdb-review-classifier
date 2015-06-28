@@ -13,9 +13,9 @@ def generate_arff(bag,reviews,filename):
 	f = open(filename,'w')
 	f.write("@relation imdbreviewclassifier\n")
 	for i in range(bag.num_features):
-		f.write("@attribute "+str(i)+" {0,1}\n")
+		f.write("@attribute "+str(i)+" NUMERIC\n")
 	f.write("@attribute class {p,n}\n")
-	f.write("@data")
+	f.write("@data\n")
 	for j in range(bag.size):		
 		rev_data = "{"
 		if j%1000 == 0:

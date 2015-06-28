@@ -26,8 +26,8 @@ def _create_features(texts):
 				 stop_words = None,  
 				 max_features = 50) 
 	features = vectorizer.fit_transform(texts)
-	try:
-		print vectorizer.get_feature_names()
+	
+	print vectorizer.get_feature_names()
 	features = features.toarray()
 	
 	#feature_names = vectorizer.get_feature_names()
