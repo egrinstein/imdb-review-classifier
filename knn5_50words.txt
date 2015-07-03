@@ -1,0 +1,91 @@
+=== Run information ===
+
+Scheme:weka.classifiers.lazy.IBk -K 5 -W 0 -A "weka.core.neighboursearch.LinearNNSearch -A \"weka.core.EuclideanDistance -R first-last\""
+Relation:     imdbreviewclassifier
+Instances:    25000
+Attributes:   51
+              0
+              1
+              2
+              3
+              4
+              5
+              6
+              7
+              8
+              9
+              10
+              11
+              12
+              13
+              14
+              15
+              16
+              17
+              18
+              19
+              20
+              21
+              22
+              23
+              24
+              25
+              26
+              27
+              28
+              29
+              30
+              31
+              32
+              33
+              34
+              35
+              36
+              37
+              38
+              39
+              40
+              41
+              42
+              43
+              44
+              45
+              46
+              47
+              48
+              49
+              class
+Test mode:10-fold cross-validation
+
+=== Classifier model (full training set) ===
+
+IB1 instance-based classifier
+using 5 nearest neighbour(s) for classification
+
+
+Time taken to build model: 0.01 seconds
+
+=== Stratified cross-validation ===
+=== Summary ===
+
+Correctly Classified Instances       15349               61.396  %
+Incorrectly Classified Instances      9651               38.604  %
+Kappa statistic                          0.2279
+Mean absolute error                      0.4266
+Root mean squared error                  0.4971
+Relative absolute error                 85.327  %
+Root relative squared error             99.4261 %
+Total Number of Instances            25000     
+
+=== Detailed Accuracy By Class ===
+
+               TP Rate   FP Rate   Precision   Recall  F-Measure   ROC Area  Class
+                 0.613     0.386      0.614     0.613     0.614      0.654    p
+                 0.614     0.387      0.614     0.614     0.614      0.654    n
+Weighted Avg.    0.614     0.386      0.614     0.614     0.614      0.654
+
+=== Confusion Matrix ===
+
+    a    b   <-- classified as
+ 7668 4832 |    a = p
+ 4819 7681 |    b = n
