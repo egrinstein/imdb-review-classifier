@@ -1,0 +1,64 @@
+=== Run information ===
+
+Scheme:weka.classifiers.trees.ADTree -B 10 -E -3
+Relation:     imdbreviewclassifier
+Instances:    25000
+Attributes:   1001
+[list of attributes omitted]
+Test mode:10-fold cross-validation
+
+=== Classifier model (full training set) ===
+
+Alternating decision tree:
+
+: 0
+|  (1)69 < 0.5: -0.153
+|  (1)69 >= 0.5: 0.539
+|  (2)984 < 0.5: -0.071
+|  |  (8)100 < 0.5: -0.035
+|  |  (8)100 >= 0.5: 0.671
+|  (2)984 >= 0.5: 0.998
+|  (3)948 < 0.5: -0.044
+|  (3)948 >= 0.5: 1.139
+|  (4)388 < 0.5: 0.121
+|  (4)388 >= 0.5: -0.363
+|  (5)65 < 0.5: -0.038
+|  (5)65 >= 0.5: 0.866
+|  (6)295 < 0.5: 0.045
+|  |  (9)976 < 0.5: 0.032
+|  |  (9)976 >= 0.5: -0.673
+|  (6)295 >= 0.5: -0.649
+|  (7)86 < 0.5: 0.074
+|  (7)86 >= 0.5: -0.306
+|  (10)652 < 0.5: -0.033
+|  (10)652 >= 0.5: 0.557
+Legend: -ve = p, +ve = n
+Tree size (total number of nodes): 31
+Leaves (number of predictor nodes): 21
+
+Time taken to build model: 684.05 seconds
+
+=== Stratified cross-validation ===
+=== Summary ===
+
+Correctly Classified Instances       17954               71.816  %
+Incorrectly Classified Instances      7046               28.184  %
+Kappa statistic                          0.4363
+Mean absolute error                      0.4115
+Root mean squared error                  0.4369
+Relative absolute error                 82.3042 %
+Root relative squared error             87.3783 %
+Total Number of Instances            25000     
+
+=== Detailed Accuracy By Class ===
+
+               TP Rate   FP Rate   Precision   Recall  F-Measure   ROC Area  Class
+                 0.866     0.429      0.668     0.866     0.754      0.793    p
+                 0.571     0.134      0.81      0.571     0.669      0.793    n
+Weighted Avg.    0.718     0.282      0.739     0.718     0.712      0.793
+
+=== Confusion Matrix ===
+
+     a     b   <-- classified as
+ 10822  1678 |     a = p
+  5368  7132 |     b = n
