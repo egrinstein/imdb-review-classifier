@@ -132,17 +132,17 @@ def toScikitSVM(gen_train=True,gen_valid=True):
     if gen_train:
         train_reviews = generate_reviews(working_folder+"part1/neg",'n')
         train_reviews += generate_reviews(working_folder+"part1/pos",'p')
-        print("generated train reviews")
+        #print("generated train reviews")
         train,features_used = generate_vector(train_reviews)	
         train_reviews = None
-        print train
+        #print train
     if gen_valid:
         validation_reviews = generate_reviews(working_folder+"part2/neg",'n')
         tmp = generate_reviews(working_folder+"part2/pos",'p')
         validation_reviews += tmp
     
         validation,features_used = generate_vector(validation_reviews,features_used)
-        print "validation:",validation
+        #print "validation:",validation
     
     if gen_train:
         tf = open("train_bag",'w')
