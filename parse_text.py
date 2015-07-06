@@ -26,10 +26,7 @@ def _get_meaningful_words(text):
                         filtered += word[0:-1]
                     else:
                         filtered += word
-                    if word == 'not':
-                        filtered += '_'
-                    else:
-                        filtered += ' '
+                    filtered += ' '
                 except IndexError:
                     continue
 	return filtered
