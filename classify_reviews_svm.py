@@ -66,9 +66,13 @@ def main():
         features = pickle.load(handle)
   
     review = Review("review.txt")
+    f = open("review.txt",'r')
+    text = f.read()
+    print text
+    f.close()
     while review:
         cl = classify(review,features,classifier)
-        print cl
+        print review
         if cl[0]:
             print "This is positively positive!!!"
         else:
@@ -77,6 +81,10 @@ def main():
         if prompt == 'n':
             break
         review = Review("review.txt")
+        f = open("review.txt",'r')
+        text = f.read()
+        print text
+        f.close()
 
 if __name__ == "__main__":
     main()

@@ -1,7 +1,7 @@
-import collections,re
+import re
 import nltk
 from bs4 import BeautifulSoup
-from sklearn.feature_extraction.text import CountVectorizer
+
 
 import sys
 
@@ -18,7 +18,6 @@ def _get_meaningful_words(text):
 
 	stopwords_set = set(nltk.corpus.stopwords.words("english"))
 	filtered = ""
-	#words = [w for w in words if not w in stopwords_set]
 	for word in words:
             if word not in stopwords_set:
                 try:

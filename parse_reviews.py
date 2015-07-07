@@ -42,7 +42,6 @@ class Review:
                 Review.word_index[word] = Review.curr_index
                 Review.word_count[word] = 1
                 Review.curr_index += 1
-    
    
     def most_frequent_words(num_words):
         features = sorted(Review.word_count, key=Review.word_count.get, reverse=True)[:num_words]
@@ -158,11 +157,11 @@ def toScikitSVM(gen_train=True,gen_valid=True):
     return train,validation
     
     
-#a,b = toScikitSVM()
-#print a,b
 
-if __name__ == "__main__":
-    toScikitSVM()
+
+
+
+
     
    
 		
