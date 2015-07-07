@@ -1,6 +1,6 @@
 # An accurate classifier for IMDB reviews
 ## Description
-We ([egrinstein](https://github.com/egrinstein),[biavaz](https://github.com/biavaz),[psava](https://github.com/patricksava) made an SVM classifier with 85%
+We ([egrinstein](https://github.com/egrinstein),[biavaz](https://github.com/biavaz),[psava](https://github.com/patricksava)) made an SVM classifier with 85%
 accuracy. We trained it with 25.000 reviews and validated it with another 25.000.
  
 ## Try it
